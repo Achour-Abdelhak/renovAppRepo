@@ -3,6 +3,7 @@ package com.renovSolution.renov;
 import com.renovSolution.renov.model.*;
 import com.renovSolution.renov.repo.AdresseRepo;
 import com.renovSolution.renov.repo.ClientRepo;
+import com.renovSolution.renov.repo.IndividuRepo;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -41,7 +42,7 @@ public class RenovApplication {
 	}
 
 	@Bean
-	CommandLineRunner commandLineRunner(UtilisateurRepo utilisateurRepo, AdresseRepo adresseRepo,ClientRepo clientRepo) {
+	CommandLineRunner commandLineRunner(UtilisateurRepo utilisateurRepo, AdresseRepo adresseRepo, ClientRepo clientRepo, IndividuRepo individuRepo) {
 
 		return args -> {
 
@@ -75,9 +76,9 @@ public class RenovApplication {
 					"client",
 					LocalDate.now(),
 					"client",
-					"Francois",
-					"Moffat",
-					"francois.moffat@itsolution.com",
+					"Flouflou",
+					"Alain",
+					"alain.flouflou@itsolution.com",
 					"514 514 2222"
 			);
 
@@ -156,7 +157,9 @@ public class RenovApplication {
 
 
 		//	System.out.println(client);
-
+			Individu indiv1 = new Individu("Alain", "Alain", LocalDate.now(),
+					"Individu", 0,0,"Peinture","alain@bell.net", "555-555-5555", "Numero2021AlainPeintre", "Flouflou", "Alain"  );
+			individuRepo.save(indiv1);
 		};
 	}
 
