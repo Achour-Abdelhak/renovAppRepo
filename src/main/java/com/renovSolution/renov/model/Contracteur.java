@@ -2,7 +2,7 @@ package com.renovSolution.renov.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.renovSolution.renov.repo.AppelDOffreRepo;
-
+//bonjour
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
